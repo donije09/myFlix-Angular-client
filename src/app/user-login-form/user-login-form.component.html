@@ -1,19 +1,16 @@
 <mat-card>
-    <mat-card-header>
-      <mat-card-title>Login</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <form>
-        <mat-form-field>
-          <input matInput [(ngModel)]="loginData.Username" placeholder="Username" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput [(ngModel)]="loginData.Password" type="password" placeholder="Password" required>
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button (click)="loginUser()" color="primary">Login</button>
-    </mat-card-actions>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="loginData.Username" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="loginData.Password" required />
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="loginUser()">Login</button>
+  </mat-card-actions>
 </mat-card>
-  

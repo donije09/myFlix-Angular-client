@@ -14,149 +14,20 @@ export class UserRegistrationFormComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
-      this.dialogRef.close(); // Close the dialog on success
-      this.snackBar.open('Registration successful', 'OK', {
-        duration: 2000
-      });
-    }, (error) => {
-      this.snackBar.open('Registration failed', 'OK', {
-        duration: 2000
-      });
-    });
+    this.fetchApiData.userRegistration(this.userData).subscribe(
+      (result) => {
+        this.dialogRef.close();
+        this.snackBar.open('Registration successful', 'OK', { duration: 2000 });
+      },
+      (error) => {
+        this.snackBar.open('Registration failed', 'OK', { duration: 2000 });
+      }
+    );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

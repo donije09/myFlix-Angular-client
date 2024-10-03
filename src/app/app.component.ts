@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
-import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,15 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'myFlix-Angular-client';
+  constructor(public dialog: MatDialog) {}
+
+  openUserRegistrationDialog(): void {
+    this.dialog.open(UserRegistrationFormComponent, {
+      width: '280px'
+    });
+  }
+
   openUserLoginDialog(): void {
-    // Logic to open the user login dialog, for example:
     this.dialog.open(UserLoginFormComponent, {
       width: '280px'
     });
